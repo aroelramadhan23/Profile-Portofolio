@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Profil</title>
+    <!-- icon -->
+    <link rel="icon" href="img/AR.png" />
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font Style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link Bootsrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <!-- Bagian isi -->
+  <body>
+    <!-- Header Navbar -->
+    <header>
+      <nav class="navbar">
+        <h1 class="logo">aroel_ramadhan23</h1>
+        <button class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skill</a></li>
+          <li><a href="#portofolio">Portofolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="hero-header">
+          <h4>WELCOME to my Profil Website</h4>
+          <span class="saya">I'm</span>
+          <h1>Muhammad Syahrul Ramadhan, S.Pd</h1>
+          <p class="job">
+            <span class="job-label">My Job's as </span>
+            <span id="typing" class="typing"></span>
+          </p>
+          <div class="hero-button">
+            <a href="#about" class="btn btn-primary">Look at me</a>
+            <a href="#contact" class="btn btn-outline">Contact me</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="img/aroel.png" alt="aroel_ramadhan23" />
+        </div>
+      </div>
+    </section>
+    <!-- JS Hero -->
+    <script>
+      const texts = [
+        "Teacher",
+        "Web Development",
+        "Electrical Engineering",
+        "Vector Design",
+      ];
+
+      let index = 0;
+      let charIndex = 0;
+      const typingElement = document.getElementById("typing");
+      const typingSpeed = 100;
+      const erasingSpeed = 50;
+      const delayBetween = 1500;
+
+      function typeText() {
+        if (charIndex < texts[index].length) {
+          typingElement.textContent += texts[index].charAt(charIndex);
+          charIndex++;
+          setTimeout(typeText, typingSpeed);
+        } else {
+          setTimeout(eraseText, delayBetween);
+        }
+      }
+
+      function eraseText() {
+        if (charIndex > 0) {
+          typingElement.textContent = texts[index].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(eraseText, erasingSpeed);
+        } else {
+          index = (index + 1) % texts.length;
+          setTimeout(typeText, typingSpeed);
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        setTimeout(typeText, 500);
+      });
+    </script>
+
+    <!-- About Me -->
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p class="about-desc">
+        I am a teacher with a keen interest in web development and electrical
+        engineering. I have experience in website development, electrical
+        installation, and technology learning.
+      </p>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3>Educational Bg</h3>
+          <ul>
+            <li>
+              <span class="year">2015-2019</span>
+              <strong class="degree">S1</strong>
+              <span class="school"> Yogyakarta State University </span>
+            </li>
+            <li>
+              <span class="year">2012-2015</span>
+              <strong class="degree">SMA</strong>
+              <span class="school">SMA N 7 Cirebon</span>
+            </li>
+          </ul>
+        </div>
+        <div class="about-card">
+          <h3>Job History</h3>
+          <ul>
+            <li>
+              <span class="year">2025-now</span>
+              <span class="place-work"> SMK Al-Istiqomah Kota Cirebon </span>
+            </li>
+            <li>
+              <span class="year">2020-now</span>
+              <span class="place-work"> Electrical Freelance</span>
+            </li>
+            <li>
+              <span class="year">2025-now</span>
+              <span class="place-work"> WEB Dev Freelance</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="about-gallery">
+        <div class="gallery-wrapper">
+          <div class="gallery-track">
+            <img src="img/ke1.png" alt="Latihan Panahan" />
+            <img src="img/ke2.png" alt="Perpisahan 2025" />
+            <img src="img/ke3.png" alt="Pemasangan Instalasi" />
+            <img src="img/ke4.png" alt="Forum DIskusi" />
+            <img src="img/ke5.png" alt="Trainer" />
+            <img src="img/ke6.png" alt="Proyek Tambang" />
+            <img src="img/ke7.png" alt="Altar Jogja" />
+            <!-- Duplikat Gambar -->
+            <img src="img/ke1.png" alt="" />
+            <img src="img/ke2.png" alt="" />
+            <img src="img/ke3.png" alt="" />
+            <img src="img/ke4.png" alt="" />
+            <img src="img/ke5.png" alt="" />
+            <img src="img/ke6.png" alt="" />
+            <img src="img/ke7.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skill -->
+    <section id="skills" class="skills">
+      <h2>Skill</h2>
+      <div class="skill-box">
+        <ul class="skill-item">
+          <li class="skill-normal">
+            <div
+              class="skill-img"
+              style="background-image: url(img/1.electrical.png)"
+            ></div>
+            <div class="skill-label">
+              <span> Electrical Installation </span>
+            </div>
+          </li>
+          <li class="skill-inverted">
+            <div class="skill-label">
+              <span> Programble Logic Controller (PLC) </span>
+            </div>
+            <div
+              class="skill-img"
+              style="background-image: url(img/2.plc.png)"
+            ></div>
+          </li>
+          <li class="skill-normal">
+            <div
+              class="skill-img"
+              style="background-image: url(img/3.WebDev.png)"
+            ></div>
+            <div class="skill-label">
+              <span> WEB Development </span>
+            </div>
+          </li>
+          <li class="skill-inverted">
+            <div class="skill-label">
+              <span> Teaching & Curicullum </span>
+            </div>
+            <div
+              class="skill-img"
+              style="background-image: url(img/4.teaching.png)"
+            ></div>
+          </li>
+        </ul>
+        <div class="certificate">
+          <h3>Certificate</h3>
+          <div class="certificate-list">
+            <div class="certificate-item">
+              <span>CoE Industrial Automation</span>
+              <p>No.01566/D7.5/PP/B134010/003/2023</p>
+            </div>
+            <div class="certificate-item">
+              <span>Teacher Professional Education</span>
+              <p>No.0047179</p>
+            </div>
+            <div class="certificate-item">
+              <span>WEB Development</span>
+              <p>No.287/S.Cr/CAWD/XII/20253</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portofolio -->
+    <section id="portofolio" class="portofolio">
+      <h2>Portofolio</h2>
+      <div class="portofolio-grid">
+        <div class="portofolio-card">
+          <video class="hover-video" muted loop poster="video/solar.png">
+            <source src="video/solar.mp4" type="video/mp4" />
+          </video>
+          <h3>Solar Panel Installation</h3>
+          <p>Solar panel and CCTV installation project</p>
+        </div>
+        <div class="portofolio-card">
+          <video class="hover-video" muted loop poster="video/teaching.png">
+            <source src="video/teaching.mp4" type="video/mp4" />
+          </video>
+          <h3>Teaching</h3>
+          <p>Teaching activities at vocational high school</p>
+        </div>
+        <div class="portofolio-card">
+          <video class="hover-video" muted loop poster="video/wedding.png">
+            <source src="video/wedding.mp4" type="video/mp4" />
+          </video>
+          <h3>Wedding Invitation Digital</h3>
+          <p>Make WEB invitation project with HTLM, CSS, JS</p>
+        </div>
+      </div>
+      <!-- JS play-video -->
+      <script>
+        document.querySelectorAll(".hover-video").forEach((video) => {
+          video.addEventListener("mouseenter", () => {
+            video.play();
+          });
+
+          video.addEventListener("mouseleave", () => {
+            video.pause();
+            video.currentTime = 0;
+            video.load();
+          });
+        });
+      </script>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <h2>Contact</h2>
+      <div class="contact-list">
+        <h4>Call me on :</h4>
+        <a href="mailto:aroel.ramadhan23@gmail.com" class="contact-item">
+          <i class="bi bi-envelope-fill"></i>
+          <span>aroel.ramadhan23@gmail.com</span>
+        </a>
+        <a
+          href="https://instagram.com/aroel_ramadhan23"
+          target="_blank"
+          class="contact-item"
+        >
+          <i class="bi bi-instagram"></i>
+          <span>@aroel_ramadhan23</span>
+        </a>
+      </div>
+      <div class="contact-form">
+        <h3>Send Massage</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <input type="text" name="nama" placeholder="" required />
+            <label>Name</label>
+          </div>
+          <div class="form-group">
+            <input type="tel" name="hp" placeholder="" required />
+            <label>No. HP</label>
+          </div>
+          <div class="form-group">
+            <select name="keperluan" required>
+              <option value="" disabled selected></option>
+              <option value="Kerja Sama">Cooperation</option>
+              <option value="Project">Project List</option>
+              <option value="Berdiskusi">Discuss</option>
+            </select>
+            <label> Needs </label>
+          </div>
+          <div class="form-group">
+            <textarea name="pesan" placeholder="" required></textarea>
+            <label> Description :</label>
+          </div>
+          <button type="submit" class="btn-submit">Send</button>
+        </form>
+        <p id="formStatus" class="status"></p>
+      </div>
+      <!-- Loading screen -->
+      <div id="loadingScreen">
+        <div class="loader">
+          <p>Sending massage...</p>
+        </div>
+      </div>
+      <!-- JS Form pesan -->
+      <script>
+        const form = document.getElementById("contactForm");
+        const status = document.getElementById("formStatus");
+        const loading = document.getElementById("loadingScreen");
+        const submitBtn = form.querySelector(".btn-submit");
+
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+
+          loading.classList.add("active");
+          submitBtn.disabled = true;
+
+          fetch(
+            "https://script.google.com/macros/s/AKfycbx4qS4h3zD9wEHROGzcdKXgiV6EdXSxaw_NXMhr1GAkcFa5Ir5K6_AYNOtr7sHicWzG1w/exec",
+            {
+              method: "POST",
+              body: new FormData(form),
+            }
+          )
+            .then((res) => res.text())
+            .then(() => {
+              showStatus("Pesan berhasil dikirim!", "success");
+              form.reset();
+            })
+            .catch(() => {
+              showStatus("Gagal mengirim pesan!", "error");
+            })
+            .finally(() => {
+              loading.classList.remove("active");
+              submitBtn.disabled = false;
+            });
+        });
+        function showStatus(message, type) {
+          status.textContent = message;
+          status.className = type;
+          status.style.opacity = "1";
+
+          setTimeout(() => {
+            status.style.opacity = "0";
+          }, 3000);
+        }
+      </script>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2026 Muhammad Syahrul Ramadhan ^ All Rights Reserved</p>
+    </footer>
+
+    <!-- JS Navbar -->
+    <script>
+      const navLinks = document.querySelectorAll(".nav-menu a");
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              navLinks.forEach((link) => link.classList.remove("active"));
+              document
+                .querySelector(`.nav-menu a[href="#${entry.target.id}"]`)
+                ?.classList.add("active");
+            }
+          });
+        },
+        {
+          threshold: 0.6,
+        }
+      );
+
+      document.querySelectorAll("section").forEach((section) => {
+        observer.observe(section);
+      });
+    </script>
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const navMenu = document.getElementById("navMenu");
+
+      menuToggle.addEventListener("click", (e) => {
+        e.stopPropagation();
+        navMenu.classList.toggle("active");
+      });
+
+      // Auto close ketika klik menu
+      document.querySelectorAll(".nav-menu a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navMenu.classList.remove("active");
+        });
+      });
+      document.addEventListener("click", (e) => {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+          navMenu.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>
