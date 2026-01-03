@@ -767,7 +767,6 @@ header {
 
 /* Footer */
 footer {
-  position: fixed;
   justify-content: center;
   bottom: 0;
   left: 0;
@@ -934,6 +933,7 @@ footer {
   /* footer */
   footer {
     padding: 10px;
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
+
