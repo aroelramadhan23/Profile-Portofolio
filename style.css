@@ -706,11 +706,10 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(16, 42, 67, 0.6);
   backdrop-filter: blur(4px);
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -719,18 +718,54 @@ header {
   visibility: hidden;
   transition: 0.3 ease;
 }
+/* Wrapper */
+.brand-wrapper {
+  text-align: center;
+}
 
+/* Brand Name */
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 3px;
+  margin-bottom: 5rem;
+  animation: brandFade 1s ease-in-out infinite;
+}
+
+/* Circular Line */
+.circle-line {
+  width: 80px;
+  height: 80px;
+  border: 2px solid;
+  border-top: 2px solid #38bdf8;
+  border-bottom: 2px solid #38bdf8;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: rotateCircle 1.2s linear infinite;
+}
+
+/* Animations */
+@keyframes rotateCircle {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes brandFade {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 #loadingScreen.active {
   opacity: 1;
   visibility: visible;
-  animation: blink 0.5s infinite;
 }
-#loadingScreen p {
-  text-align: center;
-  color: var(--bg-main);
-  font-size: 2rem;
-  font-weight: 600;
-}
+
 .contact-form .btn-submit {
   width: 100%;
   margin-top: 20px;
@@ -780,9 +815,9 @@ footer {
   z-index: 99;
 }
 
-@media (max-width: 400px) {
-  /* Navbars */
-   header {
+@media (max-width: 700px) {
+  /* Navbar belum beres */
+  header {
     padding: 5px 20px;
   }
   .menu-toggle {
@@ -791,8 +826,8 @@ footer {
   .nav-menu {
     position: fixed;
     top: 50px;
-    right: 50px;
-    left: 50px;
+    right: 20px;
+    left: auto;
 
     width: 300px;
 
@@ -939,5 +974,3 @@ footer {
     font-size: 0.8rem;
   }
 }
-
-
